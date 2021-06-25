@@ -21,9 +21,25 @@ const findAlbums = function(query) {
       arrAlbums.forEach((album) => {
         let col = document.createElement("div")
         col.classList.add("col-3")
-        col.innerHTML = `<img src="${album.cover_big}" class="img-fluid" style="width: 15rem"/>
-                          <p>${album.title}</p>`
-        row.appendChild(col)  
+
+        let img = document.createElement("img")
+        img.classList.add("img-fluid")
+        img.style.width = "15rem"
+        img.src = album.cover_big
+        
+        let p = document.createElement("p")
+        p.innerHTML = `${album.title}`
+        
+        img.onclick = () => {
+          window.location.assign("./album.html?id=" + album.id)
+        }
+        p.onclick = () => {
+          window.location.assign("./album.html?id=" + album.id)
+        }
+        col.appendChild(img)
+        col.appendChild(p)
+        row.appendChild(col)
+        
 })      
     }
   })
@@ -31,8 +47,6 @@ const findAlbums = function(query) {
 findAlbums("queen")
 console.log(arrAlbums)
 console.log(arrAlbums.length)
-
- 
 
 
 
