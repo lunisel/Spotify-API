@@ -1,4 +1,7 @@
 // API
+let id = new URLSearchParams(window.location.search).get("id")
+
+console.log(id)
 
 let row = document.getElementsByClassName("row")[1]
     let arrTitles = []

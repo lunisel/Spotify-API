@@ -151,12 +151,12 @@
 
     <div class="section d-flex">
       <div class="leght-img">
-        <img src="./assets/bohemian.jfif" class="pt-4" alt="" />
+        <img src="" class="pt-4" alt="" id="img-header" />
       </div>
 
       <div class="right-text">
         <h6>ALBUM</h6>
-        <h3 class="h2">Bohemian Rhapsody (The Original Soundtrack)</h3>
+        <h3 class="h2" id="title">Bohemian Rhapsody (The Original Soundtrack)</h3>
         <p>
           <img src="./assets/bohemian-small.jfif" alt="" />
           <a href="#"> Queen</a>
@@ -271,11 +271,19 @@
     }
     let album1 = document.getElementById("album-list")
     const getAlbum = () => {
-      fetch("https://striveschool-api.herokuapp.com/api/deezer/album/75621062")
+      let id = new URLSearchParams(window.location.search).get("id")
+      console.log(id)
+      fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
         .then(resp => resp.json())
         .then(album => {
+          
 
           let tracks = album.tracks.data
+          let img = document.getElementById("img-header")
+          img.src = album.cover_big
+
+          let title = document.getElementById("title")
+          title.innerText = album.title
 
           //let div = document.createElement("div")
           //div.innerHTML = `<div class="card">
