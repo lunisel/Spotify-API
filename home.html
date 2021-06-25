@@ -60,7 +60,7 @@
             <a href="home.html"><i class="fas fa-home mt-2 fa-1x"></i>Home</a>
           </li>
           <li class="font-weight-bold navbar-to p-2">
-            <a href="#"> <i class="fas fa-search mt-2 fa-1x"></i>Search</a>
+            <a href="#" id="search-icon"> <i class="fas fa-search mt-2 fa-1x"></i>Search</a>
           </li>
           <li class="mt-2 font-weight-bold navbar-to p-2">
             <a href="#">
@@ -111,6 +111,14 @@
             <div id="right-arrow">
               <i class="fas fa-chevron-right disabled"></i>
             </div>
+
+            
+
+            <div>
+              <input type="search" id="userInput" placeholder="Search for Artists..." class="d-none"> 
+              <input type="submit" onclick="searchingFor()" class="btn btn-success mt-1" id="userSubmit" value="Search">
+              
+            </div>
           </div>
 
           <div class="col-5">
@@ -157,6 +165,15 @@
           </div>
         </div>
       </div>
+
+
+      <div class="container">
+        <div class="row containerForAPI">
+          
+        </div>
+      </div>
+      
+
 
       <div class="heading-homepage px-3">
         <h3 class="ml-3 pb-2" id="good-morning">Good Morning</h3>
@@ -889,5 +906,7 @@
         }
       });
     </script>
+
+    <script src="homepageAPI.js"></script>
   </body>
 </html>
