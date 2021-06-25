@@ -36,9 +36,10 @@ fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${userSearch.v
         p.innerText = albums[i].album.title
         p.style.color = "white"
         p.style.cursor = "pointer"
-        p.addEventListener("mouseover", function(){
-            p.style.textDecoration = "underline"
-        })
+
+        p.onclick = () => {
+            window.location.assign("./artist.html?id=" + albums[i].artist.id)
+        }
 
         col.appendChild(img)
         col.appendChild(p)
