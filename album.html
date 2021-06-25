@@ -95,7 +95,7 @@
     </div>
 
     <i class="fas fa-play play-icon-album"></i>
-    <span class="h2">Bohemian Rhapsody (The Original Soundtrack) </span>
+    <span class="h2" id="stiky-nav-title">Bohemian Rhapsody (The Original Soundtrack) </span>
 
     <div class="dropdown-menu-album">
       <div class="dropdown">
@@ -158,12 +158,12 @@
         <h6>ALBUM</h6>
         <h3 class="h2" id="title">Bohemian Rhapsody (The Original Soundtrack)</h3>
         <p>
-          <img src="./assets/bohemian-small.jfif" alt="" />
-          <a href="#"> Queen</a>
+          <img src="./assets/bohemian-small.jfif" alt="" id="img-artist"/>
+          <a id="artist-link" href="#"> Queen</a>
           <span>.</span>
-          <span>2018</span>
+          <span id="year">2018</span>
           <span>.</span>
-          <span>22 songs</span> <span>1 hr 19 min </span>
+          <span id="n-of-songs">22 songs</span> <span id="duration">1 hr 19 min </span>
         </p>
       </div>
     </div>
@@ -186,16 +186,16 @@
         <hr class="middle-title-hr" />
       </div>
 
-      <ol class="mt-4" id=album-list>
+      <ol class="mt-4" id=album-list style="margin-bottom: 6rem;">
 
       </ol>
     </div>
   </div>
 
-  <footer class="d-flex p-3">
+  <footer class="d-flex py-1 px-3">
     <!-- Song currently playing section -->
     <div class="song-playing-footer d-flex">
-      <img class="pr-3" src="assets/footer-album-image.jpg" alt="image of the song playing" />
+      <img class="pr-3 img-fluid" src="assets/bohemian.jfif" alt="image of the song playing" style="width: 5rem;"/>
       <div class="pr-3 text-nowrap">
         <a href="album.html">Bohemian Rhapsody </a> <br /><span class="small"><a href="artist.html">Queen</a></span>
       </div>
@@ -226,7 +226,7 @@
       <div class="song-timer-container d-flex mt-3">
         <span class="small d-inline-block pr-2">0:00</span>
         <span class="mt-n1">
-          <input type="range" min="1" max="100" value="50" class="slider mb-n1" id="song-timer" />
+          <input type="range" min="1" max="100" value="50" class="slider mb-2 mt-2" id="song-timer" />
         </span>
         <span class="small d-inline-block pl-2">5:54</span>
       </div>
@@ -267,12 +267,14 @@
   <!-- script for API-->
   <script>
     window.onload = () => {
-      getAlbum()
+      getAlbum(), changeArtist(), changeStikyTitle()
     }
     let album1 = document.getElementById("album-list")
+
+    let id = new URLSearchParams(window.location.search).get("id")
+
     const getAlbum = () => {
-      let id = new URLSearchParams(window.location.search).get("id")
-      console.log(id)
+      
       fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
         .then(resp => resp.json())
         .then(album => {
@@ -308,6 +310,81 @@
 
     }
 
+    const changeArtist = function(){
+      fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
+        .then(resp => resp.json())
+        .then(album => {
+          let artist = document.getElementById("artist-link")
+          artist.innerText = album.artist.name
+    })
+  }
+
+  const changeImgArtist = function(){
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
+        .then(resp => resp.json())
+        .then(album => {
+          let img = document.getElementById("img-artist")
+          img.src = album.artist.picture
+    })
+  }
+
+  changeImgArtist()
+
+  const changeYear = function(){
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
+        .then(resp => resp.json())
+        .then(album => {
+          let year = document.getElementById("year")
+          year.innerText = album.release_date
+    })
+  }
+
+  changeYear()
+
+  const changeNOfSongs = function(){
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
+        .then(resp => resp.json())
+        .then(album => {
+          let nOfTracks = document.getElementById("n-of-songs")
+          nOfTracks.innerText = album.nb_tracks + " tracks"
+    })
+  }
+
+  changeNOfSongs()
+
+  function secondsToTime(seconds) {
+  let minutes = (seconds / (60)).toFixed(1);
+  let hours = (seconds / (60 * 60)).toFixed(1);
+  let days = (seconds / (60 * 60 * 24)).toFixed(1);
+  if (minutes < 60) return minutes + " Min";
+  else if (hours < 24) return hours + " Hrs";
+  else return days + " Days"
+}
+
+  const changeDuration = function(){
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
+        .then(resp => resp.json())
+        .then(album => {
+          console.log(album.duration)
+          let duration = document.getElementById("duration")
+          let h = secondsToTime(album.duration)
+          duration.innerText = h
+    })
+  }
+
+  changeDuration()
+
+  const changeStikyTitle = function(){
+    fetch("https://striveschool-api.herokuapp.com/api/deezer/album/" + id)
+        .then(resp => resp.json())
+        .then(album => {
+          console.log(album)
+          let title = document.getElementById("stiky-nav-title")
+          title.innerText = album.title
+    })
+  }
+
+  
 
   </script>
 

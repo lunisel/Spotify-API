@@ -14,6 +14,7 @@ const artistName = function(){
 
 artistName()
 
+
 let row = document.getElementsByClassName("row")[1]
 let arrTitles = []
 let arrAlbums = []
