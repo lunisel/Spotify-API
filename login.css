@@ -1,0 +1,221 @@
+body{
+    font-family: "Inter", sans-serif;
+}
+
+div.logo{
+    height: fit-content;
+}
+
+div.logo img{
+    height: 9rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    cursor: pointer;
+}
+
+hr{
+    margin: 0;
+    border-top: 1px solid #b3b3b3;
+}
+
+.container-form{
+    max-width: 450px;
+    margin: auto;
+    height: fit-content;
+    text-align: center;
+}
+
+.container-form #top-p{
+    font-weight: 700;
+    padding-top: 2rem;
+    margin-bottom: 8px;
+}
+
+div.or{
+    padding-top: 2rem;
+}
+
+p.footer{
+    font-size: 11px;
+}
+
+p.footer span{
+    color: #1db854;
+    cursor: pointer;
+}
+
+button#facebook{
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: #3b5998;
+    border: solid 1px transparent;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+button#facebook:hover{
+    background-color: #3a61b3;
+}
+
+button#apple{
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: black;
+    border: solid 1px transparent;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    padding-left: 5.3rem;
+    padding-right: 5.3rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+button#apple:hover{
+    background-color: #333333;
+}
+
+.or .col-2{
+    font-weight: 600;
+}
+
+.log-in .email-username{
+    width: 95%;
+    height: 2.5rem;
+    border: solid 1px #b3b3b3;
+    padding-left: 10px;
+}
+
+.log-in .email-username::placeholder{
+    color: #b3b3b3;
+}
+
+.log-in .email-username:focus{
+    outline: none !important;
+    border-color: #555555;
+    padding-left: 10px;
+}
+
+.log-in .password{
+    width: 95%;
+    height: 2.5rem;
+    border: solid 1px #b3b3b3;
+    padding-left: 10px;
+}
+
+.log-in .password:focus{
+    outline: none !important;
+    border-color: #555555;
+    padding-left: 10px;
+}
+
+.log-in .password::placeholder{
+    color: #b3b3b3;
+}
+
+#log-in-btn button{
+    background-color: #15883e;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: solid 1px transparent;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+#log-in-btn button a{
+    color: white;
+    text-decoration: none;
+}
+
+#log-in-btn button:hover{
+    background-color: #1db954;
+}
+
+.forgot a{
+    color: #616467;
+    transition: color 0.2s ease;
+}
+
+.forgot a:hover{
+    color: #1da64d;
+}
+
+.forgot{
+    margin-bottom: 2.5rem;
+}
+
+p.dont-have-account{
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.bottom button{
+    color: #7a7a7a;
+    background-color: transparent;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: solid 2px rgb(46, 46, 46);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+.bottom button:hover{
+    background-color: #616467;
+    border: 2px solid #616467;
+    color: white;
+}
+
+#log-in-btn input{
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 1px solid rgb(175, 175, 175);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+#log-in-btn input:checked{
+    background-color: #15883e;
+    border: 1px solid #15883e;
+    color: white;
+}
+
+#log-in-btn input:checked::after{
+    content: '\2714';
+    font-size: 15px;
+    position: absolute;
+    top: 0;
+    left: 3px;
+    color: white;
+}
+
+#log-in-btn{
+    margin-top: 1rem;
+    display: flex;
+    align-items: baseline;
+}
+
+#log-in-btn .text-left{
+    display: inline-flex;
+    align-items: center;
+}
+
+#log-in-btn label{
+    color: #afb1b2;
+}

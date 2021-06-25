@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font awesome -->
+    <script
+      src="https://kit.fontawesome.com/9e74b2e412.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- boot strap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Spotify Clone</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">
+        <svg viewBox="0 0 1134 340" class="spotify-logo--text">
+          <title>Spotify</title>
+          <path
+            fill="currentColor"
+            d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 2-16-18-4-20 64-15 118-8 162 19 11 7 0 24-11 18zm17-45c-45-28-114-36-167-20-17 5-23-21-7-25 61-18 136-9 188 23 14 9 0 31-14 22zM80 133c-17 6-28-23-9-30 59-18 159-15 221 22 17 9 1 37-17 27-54-32-144-35-195-19zm379 91c-17 0-33-6-47-20-1 0-1 1-1 1l-16 19c-1 1-1 2 0 3 18 16 40 24 64 24 34 0 55-19 55-47 0-24-15-37-50-46-29-7-34-12-34-22s10-16 23-16 25 5 39 15c0 0 1 1 2 1s1-1 1-1l14-20c1-1 1-1 0-2-16-13-35-20-56-20-31 0-53 19-53 46 0 29 20 38 52 46 28 6 32 12 32 22 0 11-10 17-25 17zm95-77v-13c0-1-1-2-2-2h-26c-1 0-2 1-2 2v147c0 1 1 2 2 2h26c1 0 2-1 2-2v-46c10 11 21 16 36 16 27 0 54-21 54-61s-27-60-54-60c-15 0-26 5-36 17zm30 78c-18 0-31-15-31-35s13-34 31-34 30 14 30 34-12 35-30 35zm68-34c0 34 27 60 62 60s62-27 62-61-26-60-61-60-63 27-63 61zm30-1c0-20 13-34 32-34s33 15 33 35-13 34-32 34-33-15-33-35zm140-58v-29c0-1 0-2-1-2h-26c-1 0-2 1-2 2v29h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v58c0 23 11 35 34 35 9 0 18-2 25-6 1 0 1-1 1-2v-21c0-1 0-2-1-2h-2c-5 3-11 4-16 4-8 0-12-4-12-12v-54h30c1 0 2-1 2-2v-22c0-1-1-2-2-2h-30zm129-3c0-11 4-15 13-15 5 0 10 0 15 2h1s1-1 1-2V93c0-1 0-2-1-2-5-2-12-3-22-3-24 0-36 14-36 39v5h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v89c0 1 1 2 2 2h26c1 0 1-1 1-2v-89h25l37 89c-4 9-8 11-14 11-5 0-10-1-15-4h-1l-1 1-9 19c0 1 0 3 1 3 9 5 17 7 27 7 19 0 30-9 39-33l45-116v-2c0-1-1-1-2-1h-27c-1 0-1 1-1 2l-28 78-30-78c0-1-1-2-2-2h-44v-3zm-83 3c-1 0-2 1-2 2v113c0 1 1 2 2 2h26c1 0 1-1 1-2V134c0-1 0-2-1-2h-26zm-6-33c0 10 9 19 19 19s18-9 18-19-8-18-18-18-19 8-19 18zm245 69c10 0 19-8 19-18s-9-18-19-18-18 8-18 18 8 18 18 18zm0-34c9 0 17 7 17 16s-8 16-17 16-16-7-16-16 7-16 16-16zm4 18c3-1 5-3 5-6 0-4-4-6-8-6h-8v19h4v-6h4l4 6h5zm-3-9c2 0 4 1 4 3s-2 3-4 3h-4v-6h4z"
+          ></path>
+        </svg>
+      </a>
+
+      <nav class="w-100 navbar mt-4">
+        <ul class="w-100">
+          <li class="font-weight-bold p-2 navbar-active">
+            <a href="home.html"> <i class="fas fa-home mt-2 fa-1x"> </i>Home</a>
+          </li>
+          <li class="font-weight-bold p-2">
+            <a href="#"> <i class="fas fa-search mt-2 fa-1x"></i>Search</a>
+          </li>
+          <li class="mt-2 font-weight-bold p-2">
+            <a href="#">
+              <i class="fas fa-grip-lines-vertical fa-1x"></i>
+
+              Library
+            </a>
+          </li>
+          <div class="mt-5">
+            <a href="#">
+              <button class="btn-plus"><i class="fas fa-plus"></i></button
+              ><span class="pl-2"> Create Playlist </span></a
+            >
+            <br />
+            <br />
+            <a href="#">
+              <button class="btn-heart"><i class="fas fa-heart"></i></button
+              ><span class="pl-2"> Liked Songs </span></a
+            >
+          </div>
+        </ul>
+      </nav>
+
+      <div class="border-top"></div>
+
+      <ul class="middle-ul pr-3">
+        <li><a href="#"> Funky Heavy Bluesy </a></li>
+        <li><a href="#"> Your Top Songs 2020 </a></li>
+        <li>
+          <a href="#"> In Love With You - Erykah This Is Rod Stevwart </a>
+        </li>
+        <li><a href="#"> This Is Rod Stevwart</a></li>
+        <li><a href="#"> Francise ft Young Thug</a></li>
+      </ul>
+
+      <p class="download">
+        <a href="#"> <i class="fas fa-arrow-down"></i> Install App </a>
+      </p>
+    </header>
+
+    <!-- Navbar Sticky -->
+
+    <div class="stiky-menu pt-3 d-none mt-5">
+      <div class="left-arrow-album pr-3">
+        <i class="fas fa-chevron-right"></i>
+      </div>
+
+      <div class="right-arrow-album">
+        <i class="fas fa-chevron-left"></i>
+      </div>
+
+      <i class="fas fa-play play-icon-album"></i>
+      <span class="h2">Bohemian Rhapsody (The Original Soundtrack) </span>
+
+      <div class="dropdown-menu-album">
+        <div class="dropdown">
+          <a
+            class="btn btn-account dropdown-toggle d-flex align-items-center"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <img
+              src="./assets/Portrait_Placeholder.png"
+              class="img-fluid mr-2"
+              style="max-width: 1.5rem; border-radius: 1rem"
+            />
+            <span id="name-account">Diego 'Zilba' BaNOVAZ</span>
+          </a>
+
+          <div
+            class="dropdown-menu dropdown-menu-bg"
+            aria-labelledby="dropdownMenuLink"
+          >
+            <a class="dropdown-item" href="#">Account</a>
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Log out</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex span-title-small-sticky mt-2 pb-2">
+        <span class="number-sign">#</span>
+        <span class="pr-2 title-small"> TITLE </span>
+        <i class="far fa-clock"></i>
+      </div>
+    </div>
+
+    <div class="section-bg">
+      <div class="arrow-album pt-4 section">
+        <div class="left-arrow-album pr-3">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="right-arrow-album">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+
+        <div class="dropdown-menu-album">
+          <div class="dropdown">
+            <a
+              class="btn btn-account dropdown-toggle d-flex align-items-center"
+              href="#"
+              role="button"
+              id="dropdownMenuLink"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <img
+                src="./assets/Portrait_Placeholder.png"
+                class="img-fluid mr-2"
+                style="max-width: 1.5rem; border-radius: 1rem"
+              />
+              <span id="name-account">Diego 'Zilba' Banovaz</span>
+            </a>
+
+            <div
+              class="dropdown-menu dropdown-menu-bg"
+              aria-labelledby="dropdownMenuLink"
+            >
+              <a class="dropdown-item" href="#">Account</a>
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Log out</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section d-flex">
+        <div class="leght-img">
+          <img src="./assets/bohemian.jfif" class="pt-4" alt="" />
+        </div>
+
+        <div class="right-text">
+          <h6>ALBUM</h6>
+          <h3 class="h2">Bohemian Rhapsody (The Original Soundtrack)</h3>
+          <p>
+            <img src="./assets/bohemian-small.jfif" alt="" />
+            <a href="#"> Queen</a>
+            <span>.</span>
+            <span>2018</span>
+            <span>.</span>
+            <span>22 songs</span> <span>1 hr 19 min </span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-icons d-flex">
+      <div class="section-icons-album pt-4">
+        <i class="fas fa-play fa-2x play-icon-album play-icon-middle"></i>
+        <i class="fas fa-pause fa-2x pause-icon-album invisible"></i>
+        <i class="far fa-heart fa-2x heart-icon"></i>
+        <i class="fas fa-ellipsis-h"></i>
+
+        <div class="middle-list mt-5">
+          <div class="d-flex">
+            <span class="">#</span>
+            <span class="pr-2 span-title-small"> TITLE </span>
+            <i class="far fa-clock"></i>
+          </div>
+
+          <hr class="middle-title-hr" />
+        </div>
+
+        <ol class="mt-4">
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>20th Century Fox Fanfare</li>
+              <i class="fas fa-play play-icon-ol-list d-none ab"></i>
+              <span class="span-minutes">4:50</span>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Somebody To Love</li>
+              <i class="fas fa-play play-icon-ol-list d-none ab"></i>
+              <span class="span-minutes">4:50</span>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Doing All Right - ...Revisited</li>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+              <span class="span-minutes">4:50</span>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Keep Yourself Alive - Live At The Rainbow</li>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+              <span class="span-minutes">4:50</span>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Killer Queen</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Fat Bottomed Girls - Live In Paris</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Bohemian Rhapsody</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Now I'm Here - Live At The Hammersmith Odeon</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Crazy Little Thing Called Love</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Love Of My Life - Live At Rock In Rio</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>We Will Rock You - Movie Mix</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>We Will Rock You - Movie Mix</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Another One Bites The Dust</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>I Want To Break Free</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Under Pressure</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a> <span>,</span>
+            <a href="#">David Bowie</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Bohemian Rhapsody - Live Aid</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Radio Ga Ga - Live Aid</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Hammer To Fall - Live Aid</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>We Are The Champions - Live Aid</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Ay-Oh - Live Aid</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>Don't Stop Me Now - ...Revisited</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+
+          <span>
+            <div class="d-flex justify-content-between ol-list-div">
+              <li>The Show Must Go On</li>
+              <span class="span-minutes">4:50</span>
+              <i class="fas fa-play play-icon-ol-list d-none ab"> </i>
+            </div>
+            <a href="#">Queen</a>
+          </span>
+        </ol>
+      </div>
+    </div>
+
+    <footer class="d-flex p-3">
+      <!-- Song currently playing section -->
+      <div class="song-playing-footer d-flex">
+        <img
+          class="pr-3"
+          src="assets/footer-album-image.jpg"
+          alt="image of the song playing"
+        />
+        <div class="pr-3 text-nowrap">
+          <a href="album.html">Bohemian Rhapsody </a> <br /><span class="small"
+            ><a href="artist.html">Queen</a></span
+          >
+        </div>
+        <div>
+          <span class="footer-icons heart-footer pr-3">
+            <i class="far fa-heart"></i
+          ></span>
+          <span class="footer-icons show-image-footer">
+            <i class="far fa-list-alt"></i
+          ></span>
+        </div>
+      </div>
+      <!-- controls section -->
+      <div class="controls-footer d-flex">
+        <div class="controls-icons">
+          <span class="footer-icons shuffle-footer pr-3"
+            ><i class="fas fa-random"></i
+          ></span>
+          <span class="footer-icons previous-footer pr-3"
+            ><i class="fas fa-step-backward"></i
+          ></span>
+          <div class="d-inline-block pr-3">
+            <!-- Play and pause -->
+            <div style="height: 40px; width: 40px">
+              <div class="play-pause d-flex">
+                <span class="footer-icons play-footer"
+                  ><i class="fas fa-play"></i
+                ></span>
+                <span class="footer-icons pause-footer d-none"
+                  ><i class="fas fa-pause"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <span class="footer-icons next-footer pr-3"
+            ><i class="fas fa-step-forward"></i
+          ></span>
+          <span class="footer-icons repeat-footer"
+            ><i class="fas fa-redo-alt"></i
+          ></span>
+        </div>
+        <div class="song-timer-container d-flex mt-3">
+          <span class="small d-inline-block pr-2">0:00</span>
+          <span class="mt-n1">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider mb-n1"
+              id="song-timer"
+            />
+          </span>
+          <span class="small d-inline-block pl-2">5:54</span>
+        </div>
+      </div>
+      <!-- Volume controls section -->
+      <div class="volume-section-footer d-flex">
+        <span class="footer-icons queue-footer pr-3"
+          ><i class="fas fa-list-ol"></i
+        ></span>
+        <span class="footer-icons system-footer pr-3"
+          ><i class="bi bi-speaker"></i
+        ></span>
+        <!-- adding two volume speaker icons to toggle them on and off depending on click -->
+        <div class="speaker-container pr-3">
+          <span class="footer-icons speaker-on-footer"
+            ><i class="fas fa-volume-up"></i
+          ></span>
+          <span class="footer-icons speaker-off-footer d-none"
+            ><i class="fas fa-volume-mute"></i
+          ></span>
+        </div>
+        <span class="mt-n1 pr-3">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="slider"
+            id="volume-range"
+          />
+        </span>
+        <span class="footer-icons expand-footer pr-3"
+          ><i class="fas fa-expand-alt"></i
+        ></span>
+      </div>
+    </footer>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Our JS File -->
+    <script src="./footer.js"></script>
+
+    <!-- script for the navbar-->
+    <script src="./navbar.js"></script>
+
+    <!-- script album -->
+
+    <script src="./album.js"></script>
+  </body>
+</html>

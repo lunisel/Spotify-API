@@ -1,0 +1,1482 @@
+/* variables */
+
+:root {
+  /* Login page color */
+  --face-blue: #3b5998;
+  --spotify-green: #15883e;
+  /* comon colors */
+  --bg-black: #121212;
+  --reproduction-gray: #535353;
+  --buttons-green: #1db854;
+  --white-gray: #b3b3b3;
+  /* Home colors */
+  --dark-red: #552827;
+  /* Album page */
+  --purple-rhapsody: #a73a87;
+  /* Artist page */
+  --artist-gray: #424b54;
+  /* Card gray */
+  --card-gray: #181818;
+  /* border gray*/
+  --border-gray: #282828;
+}
+
+/* Common */
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-black);
+}
+
+/*Header*/
+.header {
+  width: 14%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  margin-right: 5px;
+  font-size: 14px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 8;
+}
+
+.header nav {
+  position: relative;
+}
+
+nav ul {
+  padding: 0;
+}
+.logo svg {
+  width: 50%;
+  color: white;
+  margin-left: 30px;
+}
+
+.header ul {
+  list-style: none;
+}
+
+.header ul li a,
+.header ul div a,
+.header p a {
+  text-decoration: none;
+  color: var(--white-gray);
+  text-align: center;
+  padding-left: 20px;
+  padding-bottom: 15px;
+}
+
+.header ul li a:hover,
+.header ul div a:hover,
+.header p a:hover {
+  color: white;
+  z-index: 10;
+}
+
+.header ul li a i,
+.header div a button span {
+  padding-right: 30px !important;
+}
+
+header .middle-ul {
+  padding: 0;
+  margin-top: 20px;
+}
+
+header .middle-ul li {
+  padding-left: 20px;
+  padding-bottom: 15px;
+}
+.download {
+  margin-top: 50%;
+  margin-left: 15px;
+}
+
+.header ul li {
+  z-index: 10;
+}
+
+.header nav div ul li i {
+  width: 50px;
+  z-index: 10;
+}
+.btn-plus {
+  border: none;
+  border-radius: 1px;
+}
+
+.btn-heart {
+  color: white;
+  border: none;
+  background: rgb(57, 24, 169);
+  background: linear-gradient(
+    108deg,
+    rgba(57, 24, 169, 1) 18%,
+    rgba(112, 124, 156, 1) 56%
+  );
+}
+
+.navbar-active {
+  background-color: rgba(150, 145, 145, 0.4);
+  border-radius: 5px;
+}
+
+.border-top {
+  width: 90%;
+  margin-left: 20px;
+  border-top: 0.2px solid #dee2e6 !important;
+}
+
+.middle-ul li a {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  padding-bottom: 0 !important;
+  text-align: left !important;
+}
+
+/* footer */
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 9;
+  background-color: var(--card-gray);
+  border-top: 1px solid var(--border-gray);
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+footer a,
+footer a:hover {
+  color: white;
+}
+
+.footer-icons {
+  color: var(--white-gray);
+}
+
+.heart-footer:hover,
+.show-image-footer:hover,
+.queue-footer:hover,
+.system-footer:hover,
+.speaker-on-footer:hover,
+.speaker-off-footer:hover,
+.expand-footer:hover,
+.previous-footer:hover,
+.next-footer:hover,
+.shuffle-footer:hover,
+.repeat-footer:hover {
+  color: white;
+}
+
+/* Input range */
+
+input[type='range'] {
+  height: 3px;
+  width: 100%;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input[type='range'] {
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--value) - var(--min)) / var(--range));
+  --sx: calc(0.5 * 10px + var(--ratio) * (100% - 10px));
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  width: 10px;
+  height: 10px;
+  border-radius: 1em;
+  background: white;
+  border: none;
+  box-shadow: 0 0 2px black;
+  margin-top: calc(3px * 0.5 - 10px * 0.5);
+  opacity: 0;
+  -webkit-appearance: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 0.5em;
+  border: none;
+  box-shadow: none;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  background: white;
+}
+
+input[type='range']:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+input[type='range']::-webkit-slider-thumb:active {
+  background: white;
+}
+
+input[type='range']:active::-webkit-slider-runnable-track {
+  background: #32aa56;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  background: linear-gradient(#fff, #fff) 0 / var(--sx) 100% no-repeat, #535353;
+}
+
+input[type='range']:hover::-webkit-slider-runnable-track {
+  background: linear-gradient(#32aa56, #32aa56) 0 / var(--sx) 100% no-repeat,
+    #535353;
+}
+
+input[type='range']:active::-webkit-slider-runnable-track {
+  background: linear-gradient(#32aa56, #32aa56) 0 / var(--sx) 100% no-repeat,
+    #535353;
+}
+input[type='range']:focus::-webkit-slider-track {
+  background-color: #32aa56;
+}
+
+/* song playing section */
+
+.song-playing-footer {
+  align-items: center;
+}
+
+/* Volume section */
+
+.volume-section-footer {
+  align-items: center;
+}
+
+#volume-range {
+  width: 100px;
+}
+
+.speaker-container {
+  width: 22px;
+}
+
+/* controls footer */
+
+.controls-footer {
+  flex-direction: column;
+  align-items: center;
+}
+
+div.controls-icons div.d-inline-block > div {
+  position: relative;
+}
+
+.play-pause {
+  position: absolute;
+  bottom: -10px;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  padding: 10px;
+}
+
+.play-pause:hover {
+  padding: 19px;
+}
+
+.play-footer,
+.pause-footer {
+  color: #181818;
+}
+
+.clicked-green {
+  color: var(--buttons-green) !important;
+  text-decoration: underline dotted var(--buttons-green) !important;
+}
+
+/* song timer */
+
+.song-timer-container {
+  color: var(--white-gray);
+}
+
+#song-timer {
+  min-width: 40vh;
+  max-width: 50vh;
+}
+
+/* Homepage */
+
+.container-homepage {
+  width: 86%;
+  height: 950px;
+  position: absolute;
+  right: 0;
+  background: rgb(85, 40, 39);
+  background: linear-gradient(180deg, rgba(85, 40, 39, 1) 0%, transparent 30%);
+}
+
+#fixed-nav-homepage {
+  background-color: transparent;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 3.5rem;
+  z-index: 2;
+  height: 4.5rem;
+}
+
+.heading-homepage {
+  height: fit-content;
+}
+
+div#top-buttons-homepage {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+div#top-buttons-homepage .col-5 div.dropdown {
+  display: flex;
+  justify-content: flex-end;
+}
+
+div#left-arrow {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 50%);
+  cursor: pointer;
+}
+
+div#left-arrow i {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  left: 8px;
+}
+
+div#right-arrow {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 30%);
+  cursor: not-allowed;
+}
+
+div#right-arrow i.disabled {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  opacity: 0.7;
+  left: 10.5px;
+}
+
+div#right-arrow i.disabled {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  opacity: 0.7;
+  left: 10.5px;
+}
+
+.dropdown-menu {
+  background-color: #202020;
+  margin-top: 0.5rem;
+  width: 17rem;
+  margin-right: 1.3rem;
+}
+
+.dropdown-menu i {
+  color: #f1f1f1;
+}
+
+.dropdown-menu a {
+  margin-right: 2rem;
+}
+
+.dropdown a:hover {
+  background-color: #212121;
+  color: white;
+}
+
+.dropdown a {
+  color: white;
+}
+
+a.dropdown-item:hover {
+  background-color: #747474;
+}
+
+.btn-account {
+  background-color: rgba(0, 0, 0, 50%);
+  color: white;
+}
+
+#top-buttons-homepage .col-5 {
+  padding-right: 0px;
+}
+
+.onscroll {
+  background-color: #181818ef !important;
+  height: 4rem !important;
+}
+
+a#dropdownMenuLink {
+  max-width: 13rem;
+  border-radius: 2rem;
+}
+
+span#name-account {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+h3#good-morning {
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+div.col.good-morning {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.good-morning div.card-homepage:hover {
+  background-color: rgba(255, 255, 255, 15%);
+  cursor: pointer;
+}
+
+.good-morning div.card-homepage {
+  background-color: rgba(255, 255, 255, 6%);
+  color: white;
+  height: fit-content;
+  max-height: 50px;
+}
+
+.good-morning div.card-body {
+  padding: 0;
+  padding-left: 10px;
+  max-width: 90px;
+}
+
+.good-morning h5.card-title {
+  font-size: 12px;
+  margin: 0;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#nymph {
+  font-size: 12px;
+  margin: 0;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 1 !important;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#recently-played {
+  height: fit-content;
+}
+
+div.recently-played-homepage {
+  align-items: baseline;
+  color: white;
+}
+
+p.recently-played-homepage {
+  padding-right: 1.1rem;
+  font-size: 0.6rem;
+  color: #b3b3b3;
+}
+
+p.recently-played-homepage:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#recently-played img {
+  padding: 0.8rem;
+}
+
+#recently-played div.card-homepage::after {
+  content: '';
+  background-image: url(https://jccdallas.org/wp-content/uploads/2020/06/Spotify-Play-Button-1.png);
+  position: absolute;
+  background-size: 3rem 3rem;
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  top: 45%;
+  right: 12%;
+  z-index: 1;
+  opacity: 0;
+  border-radius: 1.5rem;
+  transition: opacity 0.2s ease;
+  transition: top 0.4s ease;
+}
+
+#recently-played div.card-homepage:hover::after {
+  opacity: 1;
+  top: 40%;
+}
+
+#recently-played div.card-homepage {
+  background-color: #181818;
+  color: white;
+  height: 100%;
+  border-radius: 0.3rem;
+}
+
+#recently-played div.card-homepage:hover {
+  background-color: #2c2c2c;
+  cursor: pointer;
+}
+
+#recently-played .card-body {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-bottom: 0.3rem;
+  padding-top: 0.2rem;
+}
+
+#recently-played h6 {
+  font-size: 12px;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+#recently-played p {
+  font-size: 10px;
+  color: #b3b3b3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+div.shows-to-try-homepage {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shows-to-try-homepage h5 {
+  color: white;
+}
+
+.shows-to-try-homepage h6 {
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+.shows-to-try-homepage p {
+  padding-right: 1.1rem;
+  font-size: 0.6rem;
+  color: #b3b3b3;
+}
+
+.shows-to-try-homepage p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#shows-homepage {
+  height: fit-content;
+}
+
+#shows-homepage .card-homepage {
+  border-radius: 0.3rem;
+  background-color: #181818;
+  height: 100%;
+}
+
+#shows-homepage .card-homepage:hover {
+  background-color: #2c2c2c;
+  cursor: pointer;
+}
+
+#shows-homepage img {
+  padding: 0.8rem;
+  border-radius: 1.5rem;
+}
+
+#shows-homepage .card-body {
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-top: 0;
+  padding-bottom: 0.4rem;
+}
+
+#shows-homepage h6 {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+#shows-homepage p {
+  font-size: 10px;
+  font-weight: 600;
+  color: #b3b3b3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+
+#shows-homepage .col {
+  padding-right: 0.3rem;
+  padding-left: 0.3rem;
+}
+
+.rounded {
+  border-radius: 0.5rem !important;
+}
+/* 
+//////////////////////////////////////////////////////////
+/////////////////// ALBUM STYLES
+//////////////////////////////////////////////////////////
+*/
+
+.section-bg {
+  background: rgb(167, 58, 135);
+  background: linear-gradient(
+    180deg,
+    rgba(167, 58, 135, 1) 27%,
+    rgba(95, 33, 77, 1) 72%
+  );
+  height: 38%;
+}
+
+.section .left-arrow-album,
+.section .right-arrow-album {
+  color: white;
+}
+
+.section .left-arrow-album {
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 50%);
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  margin-left: 40px;
+}
+
+.section .left-arrow-album i {
+  margin-left: 10px;
+  margin-top: 6px;
+}
+
+.section .right-arrow-album {
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 50%);
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  margin-right: 0;
+}
+
+.section .right-arrow-album i {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+.section {
+  margin-left: 16% !important;
+}
+
+.dropdown-menu-album {
+  margin-left: 83rem !important;
+}
+
+.dropdown-menu-bg {
+  background-color: #282828;
+  color: white !important;
+}
+
+.dropdown-menu-album a {
+  color: white;
+  font-size: 14px;
+}
+
+.dropdown-menu-album a:hover {
+  color: white;
+  border-radius: 5px;
+  background-color: rgba(150, 145, 145, 0.2);
+}
+
+.section .leght-img img {
+  width: 240px;
+  position: relative;
+}
+
+.section .right-text {
+  margin-left: 20px;
+  margin-bottom: -18px !important;
+  align-self: flex-end;
+  color: white;
+}
+
+.section .right-text .h2 {
+  font-size: 40px !important;
+  font-weight: 700;
+}
+
+.section p img {
+  width: 3%;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.section p span {
+  color: white;
+}
+.section p a {
+  color: white;
+  font-weight: 700;
+}
+
+.section-icons {
+  background: rgb(24, 24, 24);
+  background: linear-gradient(
+    0deg,
+    rgba(24, 24, 24, 1) 82%,
+    rgba(65, 23, 53, 1) 92%
+  );
+
+  height: 100vh;
+
+  position: relative;
+  flex-direction: column;
+}
+
+.section-icons .section-icons-album {
+  margin-left: 16% !important;
+  position: relative;
+}
+
+.section-icons .section-icons-album i {
+  color: white !important;
+  padding-left: 1.3% !important;
+  padding-top: 16px;
+}
+
+.stiky-menu .left-arrow-album,
+.stiky-menu .right-arrow-album {
+  color: white;
+}
+
+.stiky-menu .left-arrow-album {
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 50%);
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  margin-left: 4rem;
+}
+
+.stiky-menu .left-arrow-album i {
+  margin-left: 10px;
+  margin-top: 6px;
+}
+
+.stiky-menu .right-arrow-album {
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 50%);
+  width: 1.8rem;
+  height: 1.8rem;
+  position: absolute;
+  margin-right: 5px;
+  margin-left: 25px;
+}
+
+.stiky-menu .right-arrow-album i {
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.stiky-menu .span-title-small span,
+.stiky-menu .h2 {
+  margin-left: 11rem;
+  margin-top: 1rem !important;
+}
+
+.stiky-menu .number-sign {
+  display: inline-block;
+  margin-left: 6rem !important;
+}
+
+.stiky-menu .title-small {
+  margin-left: 12px !important;
+}
+
+.stiky-menu .fa-clock {
+  margin-left: 84.8rem !important;
+  margin-top: 1rem !important;
+}
+
+.stiky-menu .play-icon-album {
+  background: var(--buttons-green);
+  border-radius: 50%;
+  width: 2.8rem;
+  height: 2.8rem;
+  position: absolute;
+  padding-left: 17px !important;
+  padding-top: 14px;
+  margin-left: 7rem;
+  margin-top: -6px;
+}
+
+.stiky-menu .dropdown-menu-album {
+  margin-left: 83rem !important;
+  margin-top: -37px !important;
+}
+
+.span-title-small-sticky {
+  color: #948f92;
+  font-size: 12px;
+  background-color: #181818;
+}
+
+.stiky-menu {
+  position: relative;
+  margin-left: 14% !important;
+}
+
+.stiky-menu {
+  height: 100px;
+  background-color: #431636;
+  color: white !important;
+  position: sticky;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.section-icons .section-icons-album .play-icon-album {
+  background: var(--buttons-green);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  cursor: pointer;
+
+  transition: width 1s, height 1s, transform 1s;
+}
+
+.section-icons .section-icons-album .pause-icon-album {
+  background: var(--buttons-green);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  position: absolute;
+  padding-left: 1.1% !important;
+  cursor: pointer;
+
+  transition: width 1s, height 1s, transform 1s;
+}
+.heart-icon {
+  margin-left: 78px !important;
+}
+
+.middle-list {
+  position: relative;
+  padding-left: 2% !important;
+}
+
+.middle-list div p,
+.middle-list div span,
+ol {
+  color: white;
+  font-size: 16px;
+  width: 96%;
+}
+
+.middle-list div span,
+.middle-list div i {
+  font-size: 12px;
+  color: #948f92;
+}
+.middle-list div .span-title-small {
+  padding-right: 83rem !important;
+}
+
+.middle-list div .fa-clock {
+  padding-right: 7rem !important;
+}
+
+.section-icons ol > span {
+  display: inline-block;
+  padding: 8px 13px;
+  width: 100%;
+}
+
+.section-icons .span-minutes {
+  padding-right: 30px !important;
+}
+
+.section-icons ol span:hover {
+  border-radius: 5px;
+  background-color: rgba(150, 145, 145, 0.2);
+  color: white !important;
+}
+
+.section-icons ol span li:hover,
+.section-icons ol span a:hover {
+  color: white !important;
+}
+
+ol a {
+  margin-left: 3%;
+  color: #9b9b9b;
+  font-size: 14px;
+}
+
+ol a:hover {
+  text-decoration: none;
+}
+
+ol {
+  counter-reset: item;
+  list-style-type: none;
+}
+ol li:before {
+  padding-right: 20px;
+  content: counter(item) ' ';
+  counter-increment: item;
+}
+
+.ol-list-div {
+  position: relative;
+}
+.play-icon-ol-list {
+  position: absolute;
+  left: -18px;
+  bottom: 4px;
+}
+
+.middle-title-hr {
+  width: 95%;
+  position: absolute;
+  top: 25px;
+  border-top: 0.2px solid #d6d1d5;
+}
+
+.play-pause-pages {
+  font-size: 20px;
+  padding: 30px;
+  background-color: var(--buttons-green);
+}
+
+.play-pages {
+  color: white;
+}
+
+.pause-pages {
+  color: white;
+}
+
+.play-pause-pages:hover {
+  padding: 32px;
+}
+
+/* Artist page */
+
+/* Artist Nav */
+
+#artist-nav-container {
+  position: fixed;
+  left: 14%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Artist Header */
+
+div#artist-header-container {
+  margin-left: 14%;
+  color: white;
+  background: url('assets/queen-cover.png') #0a0304 center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  height: 350px;
+}
+
+div#artist-header-container div.d-flex {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+div#artist-header-container div.d-flex p.verified-artist {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+div#artist-header-container div.d-flex p.verified-artist span {
+  color: #2e77d0;
+  font-size: 16px;
+}
+
+div#artist-header-container div.d-flex h1 {
+  font-size: 96px;
+  line-height: 96px;
+  font-weight: 900;
+}
+
+div#artist-header-container div.d-flex p.listeners {
+  font-size: 16px;
+  line-height: 32px;
+}
+
+/*Main part of the artist page*/
+main {
+  width: 100%;
+  height: 3500px;
+  background: rgb(18, 18, 18);
+  background: linear-gradient(
+    0deg,
+    rgba(18, 18, 18, 1) 84%,
+    rgba(77, 5, 10, 1) 100%
+  );
+}
+
+/* Artist popular */
+
+div.artist-containers {
+  color: white;
+  margin-left: 14%;
+}
+
+/* Play pause follow section */
+
+div.artist-containers div.play-pause-follow {
+  align-items: center;
+}
+
+/* three dots drop down */
+
+.three-dots-dropdown button {
+  font-size: 30px;
+}
+
+.three-dots-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.three-dots-dropdown .dropdown {
+  position: absolute;
+  top: -20px;
+}
+
+.popular-dots {
+  position: relative;
+}
+
+.three-dots-dropdown button {
+  line-height: 0;
+  color: var(--white-gray);
+}
+
+.popular-dots .dropdown {
+  position: absolute;
+  top: -25px;
+}
+
+.three-dots-dropdown button:hover {
+  background-color: transparent;
+  color: white;
+}
+
+.btn-outline-light:not(:disabled):not(.disabled).active,
+.btn-outline-light:not(:disabled):not(.disabled):active,
+.show > .btn-outline-light.dropdown-toggle {
+  color: white;
+  background-color: transparent;
+  border: 0;
+}
+
+.three-dots-dropdown .dropdown-menu {
+  background-color: var(--border-gray);
+  color: var(--white-gray);
+}
+
+.dropdown-menu a {
+  color: var(--white-gray);
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--reproduction-gray);
+  color: white;
+}
+
+.dropdown-toggle::after {
+  content: none;
+}
+
+/*Popular songs Table  */
+
+h3.artist-h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.popular-table table {
+  color: white;
+}
+
+.popular-table table img {
+  width: 40px;
+  display: inline-block;
+}
+
+.popular-table th span.popular-table-heading {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.popular-table tr:hover {
+  background-color: rgba(75, 75, 75, 0.5);
+}
+
+/* Artist Pick */
+div.artist-pick div.d-flex > img {
+  width: 100px;
+  height: 100px;
+}
+
+div.artist-pick div.d-flex div p img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+div.artist-pick div.d-flex div p.playlist {
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--white-gray);
+}
+
+h4.best-of a {
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* Artist common rows */
+.common-rows div h3 + a {
+  color: var(--white-gray);
+}
+
+/* cards */
+.artist-song-cards {
+  background-color: var(--card-gray);
+  cursor: pointer;
+}
+
+.artist-song-cards .card-body h5 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.artist-song-cards .card-body h5 {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.artist-song-cards .card-body p {
+  color: var(--white-gray);
+}
+
+.artist-song-cards:hover {
+  background-color: var(--border-gray);
+}
+
+/* Play on hover cards */
+/* square images */
+.play-artist-cards {
+  right: -20px;
+  bottom: 4px;
+}
+
+/* circular images */
+div.fans-also-like div.position-relative .play-artist-cards {
+  right: 15px;
+  bottom: 30px;
+}
+
+/* Fans Also like section */
+div.fans-also-like div.position-relative {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* About section */
+
+div.about-col div.position-relative {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+div.about-col div.position-relative::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 5;
+}
+
+div.about-col div.position-relative img {
+  width: 100%;
+}
+
+div.about-col div.position-relative div.circular-badge {
+  color: white;
+  background-color: #2e77d0;
+  border-radius: 50%;
+  top: 35px;
+  right: 35px;
+  width: 90px;
+  height: 90px;
+  z-index: 6;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.about-col div.position-relative div.circular-badge span.place-world {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 0px;
+}
+
+div.about-col div.position-relative div.circular-badge span.in-the-world {
+  font-size: 11px;
+  line-height: 0px;
+}
+
+div.about-col div.position-relative div.about-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  left: 40px;
+  bottom: 40px;
+  text-shadow: 1px 1px 0px #000000;
+  z-index: 6;
+}
+
+div.about-col div.position-relative div.about-text p.listeners-about {
+  font-weight: 700;
+}
+
+div.about-col div.position-relative div.about-text p.queen-about {
+  width: 70%;
+}
+
+/* On Tour*/
+
+div.concert-date {
+  color: white;
+  background-color: #2a2a2a;
+  top: 35px;
+  right: 35px;
+  border-radius: 5px;
+  width: 75px;
+  height: 60px;
+  z-index: 6;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div.concert-date span.concert-date-month {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 0px;
+}
+
+div.concert-date span.concert-date-day {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 0px;
+}
+
+div.artist-concerts
+  > div.d-flex
+  div.concert-date
+  + div.d-flex
+  p.concert-artist {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+div.artist-concerts > div.d-flex div.concert-date + div.d-flex p.concert-place {
+  font-size: 14px;
+  color: var(--white-gray);
+}
+
+div.artist-concerts > div.d-flex div.concert-date + div.d-flex div {
+  line-height: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+div.artist-concerts a {
+  font-size: 14px;
+  color: var(--white-gray);
+  font-weight: 700;
+}
+
+div.artist-concerts {
+  cursor: pointer;
+}
+
+/* offers */
+
+div.artist-offers img {
+  width: 80px;
+  height: 80px;
+}
+
+div.artist-offers > div.d-flex div {
+  line-height: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+div.artist-offers > div.d-flex div p.artist-offer-title {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+div.artist-offers > div.d-flex div p.artist-offer-description {
+  font-size: 14px;
+  color: var(--white-gray);
+}
+
+div.artist-offers > div.d-flex {
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+div.artist-offers > div.d-flex:hover {
+  background-color: var(--border-gray);
+}
+
+@media screen and (min-width: 1520px) {
+  #recently-played div.card-homepage::after {
+    top: 50%;
+  }
+
+  #recently-played div.card-homepage:hover::after {
+    top: 45%;
+  }
+}
+
+@media screen and (min-width: 1870px) {
+  #recently-played div.card-homepage::after {
+    background-size: 4rem 4rem;
+    height: 4rem;
+    width: 4rem;
+    top: 50%;
+  }
+
+  #recently-played div.card-homepage:hover::after {
+    top: 45%;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  #recently-played div.card-homepage::after {
+    background-size: 4.5rem 4.5rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    top: 50%;
+    right: 8%;
+  }
+
+  #recently-played div.card-homepage:hover::after {
+    top: 45%;
+  }
+}
+
+@media screen and (min-width: 2200px) {
+  #recently-played div.card-homepage::after {
+    background-size: 4.5rem 4.5rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    top: 45%;
+    right: 8%;
+  }
+
+  #recently-played div.card-homepage:hover::after {
+    top: 50%;
+  }
+}
