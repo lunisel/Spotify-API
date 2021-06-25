@@ -1093,7 +1093,7 @@ ol li:before {
 div#artist-header-container {
   margin-left: 14%;
   color: white;
-  background: url('assets/queen-cover.png') #0a0304 center;
+  background : #0a0304 center;
   background-repeat: no-repeat;
   background-size: 50%;
   height: 350px;
@@ -1139,9 +1139,36 @@ main {
   );
 }
 
+div.col-3{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.col-3 img:hover{
+  cursor: pointer;
+  border: solid gray 1px;
+  padding: 2px;
+}
+
+div.col-3 p{
+  width: 60%;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+div.col-3 p:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 /* Artist popular */
 
 div.artist-containers {
+  position:relative;
   color: white;
   margin-left: 14%;
 }
