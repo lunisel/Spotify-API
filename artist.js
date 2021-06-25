@@ -85,3 +85,47 @@ for (let i = 0; i < artistSongCardsArray.length; i++) {
   const artistSongCard = artistSongCardsArray[i]
   artistSongCard.addEventListener("mouseleave", showPlaySign)
 }
+
+
+// API
+
+let arrID = []
+
+const findID = function(query) {
+  let id
+  fetch(`https://striveschool-api.herokuapp.com/api/deezer/search?q=${query}`)
+  .then(result => result.json())
+  .then(data => {
+    let arrOfSongs = data.data
+    for(let i=0; i<arrOfSongs.length; i++){
+      let artist = arrOfSongs[i].artist
+      let IDArtist = artist.id
+      arrID.push(IDArtist)
+      let idUnique = [...new Set(arrID)]
+      id = idUnique[0]
+      return id
+    }
+    return id
+  })
+  .then(id => {
+    console.log(id)
+    return id
+  })
+  return id
+}
+
+findID("queen")
+
+
+const displayArtist = function(){
+  for (let i=0; i<arrID.length; i++){
+    fetch(`https://striveschool-api.herokuapp.com/api/deezer/artist/${arrID[i]}`)
+    .then(result => result.json())
+    .then(artists => {
+       console.log(artists)
+    })
+  }
+  
+}
+
+displayArtist()
